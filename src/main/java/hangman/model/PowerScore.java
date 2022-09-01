@@ -11,6 +11,13 @@ public class PowerScore implements GameScore {
      * @return
      */
     public int calculateScore(int correctCount, int incorrectCount) {
-        return 0;
+        double score = 0;
+        score = Math.pow(5, correctCount) - 8*incorrectCount;
+        if (score > 500){
+            score = 500;
+        } else if (score < 0) {
+            score = 0;
+        }
+        return (int) score;
     }
 }
